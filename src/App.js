@@ -1,63 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-
-class Subject extends Component{ 
-  render(){
-    return(
-      <header>
-      <h1> {this.props.title}</h1>
-         { this.props.sub}
-      </header>
-      // 최신 분법에서는 class내 함수는 function붙이지 않음. 그러므로 render에 function안붙ㅇ므
-      // react에서는 하나의 최상위 태그만 가능 
-    );
-
-  }
-
-
-}
-//JavaScript가 아님 jsx라는 언어임
-
-
-
-
-class TOC extends Component{
-  render(){
-    return(
-      <nav>
-        <ul>
-            <li><a href="1.html">HTMl</a></li>
-            <li><a href="2.html">CSS</a></li>
-            <li><a href="3.html">JavaScript</a></li>
-            
-        </ul>
-    </nav>
-
-
-    );
-
-  }
-
-}
-
-class Content extends Component{
-  render(){
-    return(
-      <article>
-        <h2>{this.props.title}</h2>
-
-       {this.props.desc}
-
-
-    </article>
-    );
-  
-  }
-
-
-}
-
-
+import TOC from "./component/TOC";
+import Content from './component/content';
+import Subject from './component/Subject';
 
 class App extends Component{
 
@@ -67,7 +12,7 @@ class App extends Component{
       <div className="App">
         <Subject title='WEB' sub= ' hello welcome to chanhoon world'></Subject>
         <TOC></TOC>
-        <Content title='HㄹㅇTML'desc ='HTML dsdsdis Markup language '></Content>
+        <Content title='HTOML'desc ='HTML dsdsdis Markup language '></Content>
       </div>
     )
 
