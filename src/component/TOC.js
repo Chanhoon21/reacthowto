@@ -3,13 +3,20 @@ import React, { Component } from 'react'; //react 라는 라이브러리ㅏ에�
 
 class TOC extends Component{
     render(){
+      var lists = [];
+      var data= this.props.data;
+      var i = 0;
+      while (i < data.length) {
+        lists.push(<li><a key={data[i].id} href={"/content/"+data[i].id}>{data[i].title}</a></li>);
+        console.log(data[i]
+        );
+        i= i + 1;
+
+      }
       return(
         <nav>
           <ul>
-              <li><a href="1.html">HTMl</a></li>
-              <li><a href="2.html">CSS</a></li>
-              <li><a href="3.html">JavaScript</a></li>
-              
+            {lists}
           </ul>
       </nav>
   
