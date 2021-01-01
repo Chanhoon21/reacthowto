@@ -67,7 +67,7 @@ class App extends Component{
       <div className="App">
         <Subject title='WEB' sub= ' hello welcome to chanhoon world'></Subject>
         <TOC></TOC>
-        <Content title='HTML'desc ='HTML dsdsdis Markup language '></Content>
+        <Content title='HㄹㅇTML'desc ='HTML dsdsdis Markup language '></Content>
       </div>
     )
 
