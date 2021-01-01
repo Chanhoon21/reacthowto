@@ -5,8 +5,8 @@ class Subject extends Component{
   render(){
     return(
       <header>
-      <h1> WEB</h1>
-        welcome to chanhoon world
+      <h1> {this.props.title}</h1>
+         { this.props.sub}
       </header>
       // 최신 분법에서는 class내 함수는 function붙이지 않음. 그러므로 render에 function안붙ㅇ므
       // react에서는 하나의 최상위 태그만 가능 
@@ -44,9 +44,9 @@ class Content extends Component{
   render(){
     return(
       <article>
-        <h2>HTML</h2>
+        <h2>{this.props.title}</h2>
 
-        HTML is Markup language
+       {this.props.desc}
 
 
     </article>
@@ -65,9 +65,9 @@ class App extends Component{
     return(
 
       <div className="App">
-        <Subject></Subject>
+        <Subject title='WEB' sub= ' hello welcome to chanhoon world'></Subject>
         <TOC></TOC>
-        <Content></Content>
+        <Content title='HTML'desc ='HTML dsdsdis Markup language '></Content>
       </div>
     )
 
