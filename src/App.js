@@ -16,7 +16,47 @@ class Subject extends Component{
 
 
 }
-//JavaScript가 아님 jsx라는 언엉미
+//JavaScript가 아님 jsx라는 언어임
+
+
+
+
+class TOC extends Component{
+  render(){
+    return(
+      <nav>
+        <ul>
+            <li><a href="1.html">HTMl</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+            
+        </ul>
+    </nav>
+
+
+    );
+
+  }
+
+}
+
+class Content extends Component{
+  render(){
+    return(
+      <article>
+        <h2>HTML</h2>
+
+        HTML is Markup language
+
+
+    </article>
+    );
+  
+  }
+
+
+}
+
 
 
 class App extends Component{
@@ -26,7 +66,8 @@ class App extends Component{
 
       <div className="App">
         <Subject></Subject>
-
+        <TOC></TOC>
+        <Content></Content>
       </div>
     )
 
