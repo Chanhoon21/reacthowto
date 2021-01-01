@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+class Subject extends Component{ 
+  render(){
+    return(
+      <header>
+      <h1> WEB</h1>
+        welcome to chanhoon world
+      </header>
+      // 최신 분법에서는 class내 함수는 function붙이지 않음. 그러므로 render에 function안붙ㅇ므
+      // react에서는 하나의 최상위 태그만 가능 
+    );
+
+  }
+
+
+}
+//JavaScript가 아님 jsx라는 언엉미
+
 
 class App extends Component{
 
@@ -8,7 +25,7 @@ class App extends Component{
     return(
 
       <div className="App">
-        <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/46463894_2246523795584724_5340350125254377472_o.jpg?_nc_cat=106&ccb=2&_nc_sid=8bfeb9&_nc_ohc=3InN3ZaL4EkAX8DG_R3&_nc_ht=scontent-ssn1-1.xx&oh=f6828a5fc9b921453e4cb5edef7a1608&oe=6013413E"></img>
+        <Subject></Subject>
 
       </div>
     )
@@ -16,5 +33,7 @@ class App extends Component{
 
   }
 }
+
+
 
 export default App;
