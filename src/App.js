@@ -44,7 +44,7 @@ class App extends Component{
           e.preventDefault();
           this.setState({mode:'welcome'});
           
-        }.bind(this)}>{this.state.subject.title}</a></h1>
+        }.bind(thisㅇ)}>{this.state.subject.title}</a></h1>
            { this.state.subject.sub}
         </header>
         <TOC datae ={this.state.contents}></TOC>
