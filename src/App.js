@@ -9,7 +9,7 @@ class App extends Component{
     super(probs);
     this.state ={
 
-      mode: 'welcome', 
+      mode: 'read', 
       subject: {title: '찬훈', sub: '안녕하세요 '},
       
       welcome: {title: 'welcome', desc: "hello react!!"},
@@ -40,7 +40,11 @@ class App extends Component{
       <div className="App">
        {/*  <Subject title= {this.state.subject.title} sub= {this.state.subject.sub}></Subject> */}
        <header>
-        <h1><a href="/">{this.state.subject.title}</a></h1>
+        <h1><a href="/" onClick= {function (e) {
+          e.preventDefault();
+          this.setState({mode:'welcome'});
+          
+        }.bind(this)}>{this.state.subject.title}</a></h1>
            { this.state.subject.sub}
         </header>
         <TOC datae ={this.state.contents}></TOC>
