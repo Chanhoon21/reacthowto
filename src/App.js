@@ -21,7 +21,7 @@ class App extends Component{
         {id: 3, title: 'JavaScript', desc: 'Javscript is for interactive'}
 
       ]
-    }
+    }// construnctor  함수 안에서는 그냥 스테이트 변경해도 된다. 그러나 프롭스가 제시된 이후에는 동적으로 변경항 깨는 setState를 사용ㅎ야한다.
   }// 프롭스나 컴포넌트가 바뀌면 해당되는 컴포넌트의 렌더 함수와 자식컴포넌트 렌더함수도 다시호출된다.
   render(){
     console.log('App render')
@@ -38,15 +38,20 @@ class App extends Component{
     return(
 
       <div className="App">
-       {/*  <Subject title= {this.state.subject.title} sub= {this.state.subject.sub}></Subject> */}
-       <header>
-        <h1><a href="/" onClick= {function (e) {
+        <Subject title= {this.state.subject.title} 
+        sub= {this.state.subject.sub} 
+        onChangePage= {function (){this.setState({mode: 'welcome'})}.bind(this)}
+        ></Subject> 
+        {/* onChangePage라는 event를 subject안에 만들어 넣었다. 그리고 그안에 함수를 설치했다.
+        그렇게 되면 이벤트가 발생했을 때 프롭스로 전달된 온체인지페이지 함수를호출하게된다. */}
+      {/*   <h1><a href="/" onClick= {function (e) {
           e.preventDefault();
-          this.setState({mode:'welcome'});
+          this.setState({mode:'welcome'});// 프롭스가 제시된 이후에는 동적으로 변경항 깨는 setState를 사용ㅎ야한다.
+
           
-        }.bind(thisㅇ)}>{this.state.subject.title}</a></h1>
+        }.bind(this)}>{this.state.subject.title}</a></h1>
            { this.state.subject.sub}
-        </header>
+        </header> */}
         <TOC datae ={this.state.contents}></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
