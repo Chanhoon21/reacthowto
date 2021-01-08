@@ -11,7 +11,8 @@ class TOC extends Component{
         <li>
           <a 
             href={"/content/"+data[i].id}
-            onClick={function(e){e.preventDefault(); this.props.onChangePage();}.bind(this)}>{data[i].title}</a></li>);
+            data-id ={data[i].id}
+            onClick={function(e){e.preventDefault();   this.props.onChangePage(e.target.dataset.id);}.bind(this)}>{data[i].title}</a></li>);
         
         
         i= i + 1;

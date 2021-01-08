@@ -8,7 +8,7 @@ class App extends Component{
   constructor (probs){
     super(probs);
     this.state ={
-
+      selected_content: 2,
       mode: 'read', 
       subject: {title: '찬훈', sub: '안녕하세요 '},
       
@@ -31,16 +31,26 @@ class App extends Component{
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
     }else if(this.state.mode ==='read'){
-      _title = this.state.contents[1].title;
-      _desc = this.state.contents[1].desc;
-
+       var i =0;
+       while(i < this.state.contents.length){
+        if(this.state.selected_content == this.state.contents[i].id){ 
+          
+          _title = this.state.contents[i].title;
+          _desc = this.state.contents[i].desc;
+          break;
+         }
+         i=i+1;
+        }
+      
+  
     }
     return(
 
       <div className="App">
         <Subject title= {this.state.subject.title} 
         sub= {this.state.subject.sub} 
-        onChangePage= {function (){this.setState({mode: 'welcome'})}.bind(this)}
+        onChangePage= {function (){ 
+          this.setState({mode: 'welcome'})}.bind(this)}
         ></Subject> 
         {/* onChangePage라는 event를 subject안에 만들어 넣었다. 그리고 그안에 함수를 설치했다.
         그렇게 되면 이벤트가 발생했을 때 프롭스로 전달된 온체인지페이지 함수를호출하게된다. */}
@@ -52,7 +62,10 @@ class App extends Component{
         }.bind(this)}>{this.state.subject.title}</a></h1>
            { this.state.subject.sub}
         </header> */}
-        <TOC onChangePage= {function(){this.setState({mode:'read'})}.bind(this)} datae ={this.state.contents}></TOC>
+        <TOC onChangePage= {function(hello){this.setState({mode:'read', selected_content: Number(hello)})
+      console.log(this.state.contents[1].id)
+      
+      }.bind(this)} datae ={this.state.contents}></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
     )
