@@ -11,8 +11,8 @@ class TOC extends Component{
         <li>
           <a 
             href={"/content/"+data[i].id}
-            data-id ={data[i].id}
-            onClick={function(e){e.preventDefault();   this.props.onChangePage(e.target.dataset.id);}.bind(this)}>{data[i].title}</a></li>);
+            data-id = {data[i].id}//data-라는 속성은  targe.dataset이라는 것으로 선택가능 e.target은 e가 들어있는 태그를 선택하는 기능
+            onClick={function(e){ e.preventDefault(); this.props.onChangePage(e.target.dataset.id);}.bind(this)}>{data[i].title}</a></li>);
         
         
         i= i + 1;

@@ -3,7 +3,7 @@ import './App.css';
 import TOC from "./component/TOC";
 import Content from './component/content';
 import Subject from './component/Subject';
-
+import Control from './component/Control';
 class App extends Component{
   constructor (probs){
     super(probs);
@@ -63,9 +63,12 @@ class App extends Component{
            { this.state.subject.sub}
         </header> */}
         <TOC onChangePage= {function(hello){this.setState({mode:'read', selected_content: Number(hello)})
-      console.log(this.state.contents[1].id)
+      console.log(this.state.selected_content); 
       
       }.bind(this)} datae ={this.state.contents}></TOC>
+   
+        <Control onChangeMode ={function(_mode){this.setState({mode: _mode})}.bind(this)}></Control>
+
         <Content title={_title} desc={_desc}></Content>
       </div>
     )
