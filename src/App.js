@@ -4,6 +4,9 @@ import TOC from "./component/TOC";
 import Content from './component/content';
 import Subject from './component/Subject';
 import Control from './component/Control';
+import {Menu} from 'antd';
+import 'antd/dist/antd.css';
+
 class App extends Component{
   constructor (probs){
     super(probs);
@@ -62,6 +65,7 @@ class App extends Component{
         }.bind(this)}>{this.state.subject.title}</a></h1>
            { this.state.subject.sub}
         </header> */}
+        
         <TOC onChangePage= {function(hello){this.setState({mode:'read', selected_content: Number(hello)})
       console.log(this.state.selected_content); 
       

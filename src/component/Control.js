@@ -1,10 +1,16 @@
 import React, { Component} from 'react';
+import 'antd/dist/antd.css';
+import { Button } from 'antd';
 
+import { Input } from 'antd';
 class Control extends Component{
     render(){
       console.log('Content render')
       return(
         <ul>
+            <li>
+            <Input placeholder="입력" />
+            </li>
             <li><a href= '/create' onClick={function (e) {e.preventDefault();
             this.props.onChangeMode('create');
                 
@@ -13,11 +19,11 @@ class Control extends Component{
             this.props.onChangeMode('update');
                 
             }.bind(this)}>update</a></li>
-            <li><input onClick={function (e) {e.preventDefault();
+            <li><Button onClick={function (e) {e.preventDefault();
             this.props.onChangeMode('delete');
                 
-            }.bind(this)} type='button' value="delete"></input></li>
-
+            }.bind(this)} type='primary' danger >delete</Button></li>
+       
         </ul>
       );
     
